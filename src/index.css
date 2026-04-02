@@ -1,4 +1,15 @@
 body { font-family: 'Inter', sans-serif; }
 h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
+@media (max-width: 768px) {
+  section {
+    flex-direction: column !important;
+    padding: 40px 24px !important;
+  }
 
+  section > div {
+    padding-left: 0 !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+  }
+}

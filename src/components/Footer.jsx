@@ -33,7 +33,7 @@ const headingStyle = {
 export default function Footer() {
   return (
     <footer style={{
-      backgroundColor: 'white',
+      backgroundColor: '#D7EEDD',
       borderTop: '1px solid #f3f4f6',
       padding: '60px 60px 32px 60px',
     }}>

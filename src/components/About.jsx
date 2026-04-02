@@ -137,7 +137,7 @@ export default function About() {
           height: '280px',
           backgroundColor: '#fecdd3',
           borderRadius: '50%',
-          filter: 'blur(70px)',
+          filter: 'blur(20px)',
           opacity: 0.35,
           zIndex: 0,
         }} />

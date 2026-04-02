@@ -1,6 +1,6 @@
-import vector5 from '../assets/vector5.png'
-import rectangle657 from '../assets/rectangle657.png'
-import polygon3 from '../assets/polygon3.png'
+import vector5 from '../assets/Vector 5.png'
+import rectangle657 from '../assets/Rectangle 657.png'
+import polygon3 from '../assets/Polygon 3.png'
 
 export default function About() {
   return (

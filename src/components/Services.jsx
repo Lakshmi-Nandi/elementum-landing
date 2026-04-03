@@ -1,55 +1,139 @@
+import rectangle657 from '../assets/Rectangle 657.png'
+import vector5 from '../assets/Vector 5.png'
+import vector2517 from '../assets/Vector 2517.png'
+import rectangle661 from '../assets/Rectangle 661.png'
+
 const services = [
   {
     tag: 'Office of multiple interest content',
-    title: 'Colaborative & partnership'
+    title: 'Colaborative & partnership',
+    hasImage: false,
   },
   {
-    tag: 'The hanger US Air force digital experiments',
-    title: 'We talk about our weight'
+    tag: 'The hanger US Air force digital experimental',
+    title: 'We talk about our weight',
+    hasImage: false,
   },
   {
-    tag: 'Delta faucer content, social, digital',
-    title: 'Piloting digital confidence'
+    tag: 'Delta faucet content, social, digital',
+    title: 'Piloting digital confidence',
+    hasImage: true,
+    // The word index where the image appears (after "confidence")
+    imageWord: 'confidence',
   },
 ]
 
 export default function Services() {
   return (
-    <section className="px-8 md:px-16 py-20">
+    <section className="px-8 md:px-16 py-20 relative overflow-hidden bg-white">
+      {/* ── Heading block ── */}
+      <div className="relative mb-16 md:mb-20">
+        {/* Orange wavy line — top-right corner */}
+        <div className="absolute -top-6 right-0 w-40 md:w-56 pointer-events-none z-10">
+          <img
+            src={vector2517}
+            alt=""
+            className="w-full h-full object-contain"
+          />
+        </div>
 
-      {/* Heading */}
-      <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-12">
-        What we{' '}
-        <span className="bg-green-200 px-1 rounded">can</span>
-        <br />
-        offer you!
-      </h2>
+        {/* Main heading */}
+        <h2
+          className="font-serif text-[2.2rem] md:text-[4.5rem] lg:text-[5.5rem] leading-[1.05] tracking-[-0.02em] text-gray-900 relative z-10"
+          style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+        >
+          {/* Line 1: "What we [can]" */}
+          <span className="block">
+            What we {/* "can" with green pill highlight behind it */}
+            <span className="relative inline-block">
+              {/* Green rounded-rectangle highlight */}
+              <img
+                src={rectangle657}
+                alt=""
+                className="absolute inset-0 w-full h-full object-fill rounded-full z-0 scale-x-110 scale-y-95"
+                style={{ filter: "none" }}
+              />
+              <span className="relative z-10 px-2">can</span>
+            </span>
+          </span>
 
-      {/* Services list */}
-      <div className="border-t border-gray-200">
+          {/* Line 2: "offer [underline] you!" */}
+          <span className="block">
+            offer
+            {/* Yellow underline Vector 5 sits right below "offer" */}
+            <span className="relative inline-block mr-3">
+              <img
+                src={vector5}
+                alt=""
+                className="absolute left-0 -bottom-2 md:-bottom-3 w-full h-3 md:h-4 object-cover pointer-events-none"
+              />
+            </span>{" "}
+            you!
+          </span>
+        </h2>
+      </div>
+
+      {/* ── Services list ── */}
+      <div className="relative z-10">
         {services.map((service, i) => (
           <div
             key={i}
-            className="flex items-center gap-6 py-7 border-b border-gray-200 group cursor-pointer hover:bg-gray-50 transition-colors duration-200 px-2"
+            className="flex items-center gap-4 py-7 md:py-9 border-t border-gray-200 group cursor-pointer last:border-b"
           >
-            {/* Tag - hidden on mobile */}
-            <span className="hidden md:block w-48 text-xs text-gray-400 shrink-0 leading-relaxed">
+            {/* Left tag — small gray label */}
+            <div className="w-44 md:w-52 flex-shrink-0 text-xs md:text-sm text-gray-400 leading-snug hidden md:block">
               {service.tag}
-            </span>
+            </div>
 
-            {/* Title */}
-            <span className="flex-1 font-serif text-xl md:text-2xl text-gray-800">
-              {service.title}
-            </span>
+            {/* Service title — with optional inline image */}
+            <div className="flex-1">
+              <h3
+                className="font-serif text-2xl md:text-[2rem] lg:text-[2.4rem] text-gray-900 leading-tight tracking-tight"
+                style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              >
+                {service.hasImage ? (
+                  // Split title so the circular image overlaps the last word
+                  <span className="relative inline-flex items-center flex-wrap gap-x-2">
+                    {/* Everything before "confidence" */}
+                    <span>Piloting digital </span>
+                    {/* "confidence" with the circle image overlaid mid-word */}
+                    <span className="relative inline-block">
+                      <span className="relative z-20">confidence</span>
+
+                      <img
+                        src={rectangle661}
+                        alt=""
+                        className="absolute -top-5 left-[38%] -translate-x-1/2 w-14 h-14 md:w-16 md:h-16 object-cover rounded-full pointer-events-none z-10"
+                      />
+                    </span>
+                  </span>
+                ) : (
+                  service.title
+                )}
+              </h3>
+            </div>
 
             {/* Arrow */}
-            <span className="text-xl text-gray-800 group-hover:translate-x-2 transition-transform duration-200">
-              →
-            </span>
+            <div className="flex-shrink-0 text-gray-800 group-hover:text-orange-500 group-hover:translate-x-1 transition-all duration-300">
+              <svg
+                width="36"
+                height="12"
+                viewBox="0 0 36 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 6H34M34 6L29 1M34 6L29 11"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
           </div>
         ))}
       </div>
-
     </section>
-  )
+  );
 }

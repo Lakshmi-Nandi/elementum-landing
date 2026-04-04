@@ -1,6 +1,17 @@
 body { font-family: 'Inter', sans-serif; }
 h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
+@font-face {
+  font-family: 'Gerbil';
+  src: url('./assets/fonts/gerbil.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-Gerbil {
+  font-family: 'Gerbil', serif !important;
+}
+
 @media (max-width: 768px) {
   section {
     flex-direction: column !important;

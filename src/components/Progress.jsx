@@ -16,7 +16,7 @@ export default function Progress() {
         style={{
           position: 'absolute',
           top: '-300px',
-          left: '0',
+          left: '100px',
           width: '100%',
           height: 'auto',
           zIndex: 0,
@@ -88,9 +88,9 @@ export default function Progress() {
           zIndex: 1,
         }}>
           <h2 style={{
-            fontFamily: "'Satoshi', sans-serif",
-            fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
-            fontWeight: '700',
+            fontFamily: "Gerbil",
+            fontSize: 'clamp(1.8rem, 3.5vw, 2.4rem)',
+            fontWeight: '400',
             lineHeight: '1.2',
             color: '#000000',
             marginBottom: '24px',

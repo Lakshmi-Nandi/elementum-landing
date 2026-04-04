@@ -24,6 +24,7 @@ const linkStyle = {
 const headingStyle = {
   fontSize: '11px',
   fontWeight: '600',
+  fontFamily: "Gerbil",
   textTransform: 'uppercase',
   letterSpacing: '2px',
   color: '#1a1a1a',

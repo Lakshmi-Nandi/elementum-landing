@@ -19,9 +19,9 @@ export default function About() {
 
         {/* Heading */}
         <h2 style={{
-          fontFamily: "'Satoshi', sans-serif",
+          fontFamily: "Gerbil",
           fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
-          fontWeight: '700',
+          fontWeight: '400',
           lineHeight: '1.2',
           color: '#000000',
           margin: '0 0 24px 0',
@@ -30,8 +30,7 @@ export default function About() {
           {/* Tomorrow with yellow underline */}
           <span style={{ position: 'relative', display: 'inline-block' }}>
             <span style={{
-              fontFamily: 'Georgia, serif',
-              fontStyle: 'italic',
+              fontFamily: 'Gerbil',
               fontWeight: '400',
             }}>
               Tomorrow

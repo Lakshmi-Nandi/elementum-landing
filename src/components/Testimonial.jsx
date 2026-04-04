@@ -19,6 +19,7 @@ export default function About() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        marginTop: '60px',
       }}
     >
       <div
@@ -41,7 +42,7 @@ export default function About() {
         >
           <h2
             style={{
-              fontFamily: "'Satoshi', sans-serif",
+              fontFamily: "'Gerbil', sans-serif",
               fontSize: 'clamp(2rem, 4vw, 3.4rem)',
               fontWeight: 500,
               lineHeight: 1.05,
@@ -52,7 +53,7 @@ export default function About() {
               zIndex: 4,
             }}
           >
-            What our customer
+            <span style={{background: "#D7EEDD", borderRadius: "40px"}}>What</span> our customer
             <br />
             says About Us
           </h2>
@@ -63,7 +64,7 @@ export default function About() {
             style={{
               display: 'block',
               margin: '6px auto 0',
-              width: '180px',
+              width: '200px',
               maxWidth: '38%',
               objectFit: 'contain',
               position: 'relative',
@@ -221,23 +222,19 @@ export default function About() {
                 margin: 0,
                 fontFamily: "'Satoshi', sans-serif",
                 fontSize: '20px',
-                fontWeight: 400,
-                lineHeight: 1.65,
+                fontWeight: 300,
+                lineHeight: 1.3,
                 color: '#1E1E1E',
                 maxWidth: '430px',
                 marginInline: 'auto',
+                lineSpacing: '-0.02em',
               }}
             >
               Elementum delivered the site within the timeline
-             
               as they requested. In the end, the client found a 50%
-              
               increase in traffic within days since its launch. They
-              
               also had an impressive ability to use technologies that
-              
               the company hasn't used, which have also proved to
-              
               be easy to use and reliable
             </p>
 

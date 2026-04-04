@@ -57,7 +57,7 @@ export default function Newsletter() {
 
       {/* Heading */}
       <h2
-        className="relative z-10 font-serif leading-tight mb-4"
+        className="relative z-10 font-Gerbil leading-tight mb-4"
         style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
       >
         Subscribe to

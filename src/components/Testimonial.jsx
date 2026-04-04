@@ -13,37 +13,35 @@ export default function About() {
     <section
       style={{
         backgroundColor: '#ffffff',
-        padding: '30px 20px 80px',
+        padding: 'clamp(30px, 6vw, 80px) clamp(20px, 5vw, 60px)',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        marginTop: '60px',
+        marginTop: 'clamp(40px, 6vw, 60px)',
       }}
     >
       <div
         style={{
           maxWidth: '1400px',
-          // margin: '0 auto',
           position: 'relative',
           width: '100%',
         }}
       >
-        {/* Heading with first left & right profiles - REDUCED GAP */}
+        {/* Heading with first left & right profiles */}
         <div
           style={{
             textAlign: 'center',
-            // marginBottom: '5px', // CHANGED: was 25px → now 5px
             position: 'relative',
             zIndex: 3,
-            paddingBottom: '10px',
+            paddingBottom: 'clamp(8px, 1vw, 10px)',
           }}
         >
           <h2
             style={{
               fontFamily: "'Gerbil', sans-serif",
-              fontSize: 'clamp(2rem, 4vw, 3.4rem)',
+              fontSize: 'clamp(1.5rem, 4vw, 3.4rem)',
               fontWeight: 500,
               lineHeight: 1.05,
               color: '#111111',
@@ -53,7 +51,7 @@ export default function About() {
               zIndex: 4,
             }}
           >
-            <span style={{background: "#D7EEDD", borderRadius: "40px"}}>What</span> our customer
+            <span style={{background: "#D7EEDD", borderRadius: "40px", padding: "0 clamp(4px, 1vw, 8px)"}}>What</span> our customer
             <br />
             says About Us
           </h2>
@@ -63,9 +61,9 @@ export default function About() {
             alt="yellow underline"
             style={{
               display: 'block',
-              margin: '6px auto 0',
-              width: '200px',
-              maxWidth: '38%',
+              margin: 'clamp(4px, 1vw, 6px) auto 0',
+              width: 'clamp(140px, 25vw, 200px)',
+              maxWidth: '90%',
               objectFit: 'contain',
               position: 'relative',
               zIndex: 4,
@@ -78,10 +76,10 @@ export default function About() {
             alt="customer"
             style={{
               position: 'absolute',
-              top: '15px',
-              left: '8%',
-              width: '97px',
-              height: '97px',
+              top: 'clamp(10px, 2vw, 15px)',
+              left: 'clamp(10px, 5vw, 8%)',
+              width: 'clamp(60px, 12vw, 97px)',
+              height: 'clamp(60px, 12vw, 97px)',
               borderRadius: '50%',
               objectFit: 'cover',
               boxShadow: '0 6px 20px rgba(0,0,0,0.08)',
@@ -95,10 +93,10 @@ export default function About() {
             alt="customer"
             style={{
               position: 'absolute',
-              top: '10px',
-              right: '8%',
-              width: '95px',
-              height: '95px',
+              top: 'clamp(8px, 2vw, 10px)',
+              right: 'clamp(10px, 5vw, 8%)',
+              width: 'clamp(60px, 12vw, 95px)',
+              height: 'clamp(60px, 12vw, 95px)',
               borderRadius: '50%',
               objectFit: 'cover',
               boxShadow: '0 6px 20px rgba(0,0,0,0.08)',
@@ -111,23 +109,23 @@ export default function About() {
         <div
           style={{
             position: 'relative',
-            minHeight: '380px',
+            minHeight: 'clamp(300px, 60vw, 380px)',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
-            marginTop: '-60px', // CHANGED: Pulls up to overlap heading area
+            marginTop: 'clamp(-40px, -8vw, -60px)',
           }}
         >
-          {/* Left side profiles (excluding first one) - adjusted upward */}
+          {/* Left side profiles (excluding first one) */}
           <img
             src={profile2}
             alt="customer"
             style={avatarStyle({
-              top: '60px',  // was 105px
-              left: '50px',
-              width: '70px',
-              height: '70px',
+              top: 'clamp(40px, 8vw, 60px)',
+              left: 'clamp(30px, 5vw, 50px)',
+              width: 'clamp(50px, 10vw, 70px)',
+              height: 'clamp(50px, 10vw, 70px)',
             })}
           />
 
@@ -135,10 +133,10 @@ export default function About() {
             src={profile3}
             alt="customer"
             style={avatarStyle({
-              top: '105px', // was 125px
-              left: '150px',
-              width: '150px',
-              height: '150px',
+              top: 'clamp(70px, 12vw, 105px)',
+              left: 'clamp(100px, 15vw, 150px)',
+              width: 'clamp(100px, 20vw, 150px)',
+              height: 'clamp(100px, 20vw, 150px)',
             })}
           />
 
@@ -146,22 +144,22 @@ export default function About() {
             src={profile4}
             alt="customer"
             style={avatarStyle({
-              top: '225px', // was 245px
-              left: '50px',
-              width: '100px',
-              height: '100px',
+              top: 'clamp(150px, 30vw, 225px)',
+              left: 'clamp(30px, 5vw, 50px)',
+              width: 'clamp(70px, 15vw, 100px)',
+              height: 'clamp(70px, 15vw, 100px)',
             })}
           />
 
-          {/* Right side profiles (excluding first one) - adjusted upward */}
+          {/* Right side profiles (excluding first one) */}
           <img
             src={profile5}
             alt="customer"
             style={avatarStyle({
-              top: '5px',   // was 25px
-              right: '250px',
-              width: '65px',
-              height: '65px',
+              top: 'clamp(0px, 2vw, 5px)',
+              right: 'clamp(200px, 20vw, 250px)',
+              width: 'clamp(50px, 10vw, 65px)',
+              height: 'clamp(50px, 10vw, 65px)',
             })}
           />
 
@@ -169,10 +167,10 @@ export default function About() {
             src={profile7}
             alt="customer"
             style={avatarStyle({
-              top: '95px',  // was 115px
-              right: '200px',
-              width: '80px',
-              height: '80px',
+              top: 'clamp(70px, 12vw, 95px)',
+              right: 'clamp(150px, 18vw, 200px)',
+              width: 'clamp(60px, 12vw, 80px)',
+              height: 'clamp(60px, 12vw, 80px)',
             })}
           />
 
@@ -180,10 +178,10 @@ export default function About() {
             src={profile8}
             alt="customer"
             style={avatarStyle({
-              top: '155px', // was 155px
-              right: '20px',
-              width: '170px',
-              height: '170px',
+              top: 'clamp(120px, 20vw, 155px)',
+              right: 'clamp(10px, 2vw, 20px)',
+              width: 'clamp(120px, 25vw, 170px)',
+              height: 'clamp(120px, 25vw, 170px)',
             })}
           />
 
@@ -194,8 +192,8 @@ export default function About() {
               width: '100%',
               maxWidth: '560px',
               background: '#F5FAF7',
-              borderRadius: '28px',
-              padding: '28px 34px',
+              borderRadius: 'clamp(20px, 4vw, 28px)',
+              padding: 'clamp(18px, 3vw, 28px) clamp(20px, 4vw, 34px)',
               position: 'relative',
               zIndex: 2,
               textAlign: 'center',
@@ -205,9 +203,9 @@ export default function About() {
             <span
               style={{
                 position: 'absolute',
-                top: '18px',
-                left: '22px',
-                fontSize: '62px',
+                top: 'clamp(12px, 2vw, 18px)',
+                left: 'clamp(16px, 3vw, 22px)',
+                fontSize: 'clamp(40px, 8vw, 62px)',
                 lineHeight: 1,
                 color: '#D7DDDA',
                 fontFamily: 'serif',
@@ -221,13 +219,13 @@ export default function About() {
               style={{
                 margin: 0,
                 fontFamily: "'Satoshi', sans-serif",
-                fontSize: '20px',
+                fontSize: 'clamp(14px, 2.5vw, 20px)',
                 fontWeight: 300,
                 lineHeight: 1.3,
                 color: '#1E1E1E',
                 maxWidth: '430px',
                 marginInline: 'auto',
-                lineSpacing: '-0.02em',
+                letterSpacing: '-0.02em',
               }}
             >
               Elementum delivered the site within the timeline
@@ -241,9 +239,9 @@ export default function About() {
             <span
               style={{
                 position: 'absolute',
-                right: '22px',
-                bottom: '12px',
-                fontSize: '62px',
+                right: 'clamp(16px, 3vw, 22px)',
+                bottom: 'clamp(8px, 1vw, 12px)',
+                fontSize: 'clamp(40px, 8vw, 62px)',
                 lineHeight: 1,
                 color: '#D7DDDA',
                 fontFamily: 'serif',
@@ -266,19 +264,22 @@ export default function About() {
         @media (max-width: 900px) {
           .testimonial-card {
             max-width: 92% !important;
-            padding: 24px 20px !important;
           }
         }
 
         @media (max-width: 768px) {
           .testimonial-card {
             max-width: 100% !important;
-            border-radius: 22px !important;
-            padding: 22px 16px !important;
           }
 
           section img[alt="customer"] {
             display: none !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .testimonial-card {
+            padding: 16px 12px !important;
           }
         }
       `}</style>

@@ -50,26 +50,27 @@ export default function Hero() {
       />
 
       <h1 className="relative z-20 mx-auto max-w-[860px] text-[44px] font-Gerbil leading-[0.95] tracking-[-0.03em] text-black md:text-[60px]">
-        The{' '}
+        The{" "}
         <span className="relative inline-block">
-          thinkers
+          <span className="relative z-10">thinkers</span>
+
           <img
             src={vector5}
             alt=""
-            className="absolute left-1/2 top-[88%] w-[250px] -translate-x-1/2 md:w-[320px]"
+            className="absolute left-1/2 top-[88%] w-[250px] -translate-x-1/2 md:w-[320px] z-0"
           />
-        </span>{' '}
+        </span>{" "}
         and
         <br />
-        doers were{' '}
+        doers were{" "}
         <span className="inline-block rounded-full bg-pink-200 px-3 py-1 md:px-4">
           changing
         </span>
         <br />
-        the{' '}
+        the{" "}
         <span className="inline-block rounded-full bg-green-200 px-3 py-1 md:px-4">
           status
-        </span>{' '}
+        </span>{" "}
         Quo with
       </h1>
 
@@ -90,5 +91,5 @@ export default function Hero() {
         ))}
       </div>
     </section>
-  )
+  );
 }

@@ -24,17 +24,17 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="px-8 md:px-16 py-20 relative overflow-hidden bg-white">
+    <section className="px-4 sm:px-8 md:px-16 py-12 md:py-20 relative overflow-hidden bg-white">
       {/* ── Heading block ── */}
-      <div className="relative mb-16 md:mb-20">
+      <div className="relative mb-12 md:mb-16 lg:mb-20">
         <img
           src={vector2517}
           alt=""
           className="absolute pointer-events-none"
           style={{
-            width: "74vw",
+            width: "clamp(50vw, 74vw, 100%)",
             height: "auto",
-            top: "-290px",
+            top: "clamp(-300px, -25vw, -280px)",
             right: "-39%",
             transform: "rotate(-1deg)",
             transformOrigin: "right center",
@@ -45,28 +45,52 @@ export default function Services() {
         />
 
         <h2
-          className="font-serif text-[1.8rem] md:text-[3.5rem] lg:text-[4.5rem] leading-[1.05] tracking-[-0.02em] text-gray-900 relative z-10"
-          style={{ fontFamily: "'Gerbil', 'Times New Roman', serif" }}
+          className="relative z-10"
+          style={{
+            fontFamily: "'Gerbil', 'Times New Roman', serif",
+            fontSize: 'clamp(1.5rem, 3.5vw, 4.5rem)',
+            lineHeight: '1.05',
+            letterSpacing: '-0.02em',
+            color: '#111111',
+            fontWeight: '400',
+          }}
         >
-          <span className="block">
+          <span style={{ display: 'block' }}>
             What we{" "}
-            <span className="relative inline-block">
+            <span style={{ position: 'relative', display: 'inline-block' }}>
               <img
                 src={rectangle657}
                 alt=""
-                className="absolute inset-0 w-full h-full object-fill rounded-full z-0 scale-x-110 scale-y-95"
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '110%',
+                  height: '95%',
+                  objectFit: 'fill',
+                  borderRadius: '100%',
+                  zIndex: 0,
+                }}
               />
-              <span className="relative z-10 px-2">can</span>
+              <span style={{ position: 'relative', zIndex: 10, padding: '0 clamp(4px, 1vw, 8px)' }}>can</span>
             </span>
           </span>
 
-          <span className="block">
-            <span className="relative inline-block">
+          <span style={{ display: 'block' }}>
+            <span style={{ position: 'relative', display: 'inline-block' }}>
               offer
               <img
                 src={vector5}
                 alt=""
-                className="absolute left-0 -bottom-1 md:-bottom-2 w-full h-3 md:h-4 object-fill pointer-events-none"
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  bottom: 'clamp(-4px, -0.5vw, -8px)',
+                  width: '100%',
+                  height: 'clamp(10px, 1.5vw, 16px)',
+                  objectFit: 'fill',
+                  pointerEvents: 'none',
+                  zIndex: 0,
+                }}
               />
             </span>{" "}
             you!
@@ -79,28 +103,83 @@ export default function Services() {
         {services.map((service, i) => (
           <div
             key={i}
-            className="flex items-center gap-4 py-7 md:py-9 border-t border-gray-200 group cursor-pointer last:border-b"
+            className="group"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 'clamp(12px, 2vw, 32px)',
+              padding: 'clamp(18px, 2.5vw, 32px) 0',
+              borderTop: '1px solid #d1d5db',
+              borderBottom: i === services.length - 1 ? '1px solid #d1d5db' : 'none',
+              cursor: 'pointer',
+              transition: 'opacity 0.3s ease',
+            }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
-            {/* Left tag */}
-            <div className="w-44 md:w-52 flex-shrink-0 text-xs md:text-sm text-gray-400 leading-snug hidden md:block">
+            {/* Left tag — fixed width, no border, no box */}
+            <div
+              style={{
+                width: 'clamp(100px, 18vw, 200px)',
+                flexShrink: 0,
+                fontSize: 'clamp(18px, 1.2vw, 13px)',
+                fontFamily: "'Satoshi', sans-serif",
+                color: '#000000',
+                lineHeight: '1.4',
+              }}
+            >
               {service.tag}
             </div>
 
             {/* Service title — centered in remaining space */}
-            <div className="flex-1 flex items-center justify-center">
+            <div
+              style={{
+                flex: 1,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
               <h3
-                className="font-serif text-2xl md:text-[2rem] lg:text-[2.4rem] text-gray-900 leading-tight tracking-tight text-center"
-                style={{ fontFamily: "'Gerbil', 'Times New Roman', serif" }}
+                style={{
+                  fontFamily: "'Gerbil', 'Times New Roman', serif",
+                  fontSize: 'clamp(1.2rem, 3vw, 2.4rem)',
+                  color: '#111111',
+                  lineHeight: '1.2',
+                  letterSpacing: '-0.01em',
+                  textAlign: 'center',
+                  fontWeight: '400',
+                  margin: 0,
+                }}
               >
                 {service.hasImage ? (
-                  <span className="relative inline-flex items-center flex-wrap gap-x-2">
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexWrap: 'wrap',
+                      gap: '0.3em',
+                    }}
+                  >
                     <span>Piloting digital </span>
-                    <span className="relative inline-block">
-                      <span className="relative z-20">confidence</span>
+                    <span style={{ position: 'relative', display: 'inline-block' }}>
+                      <span style={{ position: 'relative', zIndex: 20 }}>confidence</span>
                       <img
                         src={rectangle661}
                         alt=""
-                        className="absolute -top-2 left-[45%] -translate-x-1/2 w-14 h-14 md:w-20 md:h-20 object-cover rounded-full pointer-events-none z-10"
+                        style={{
+                          position: 'absolute',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -60%)',
+                          width: 'clamp(40px, 6vw, 70px)',
+                          height: 'clamp(40px, 6vw, 70px)',
+                          objectFit: 'cover',
+                          borderRadius: '50%',
+                          pointerEvents: 'none',
+                          zIndex: 10,
+                        }}
                       />
                     </span>
                   </span>
@@ -111,13 +190,21 @@ export default function Services() {
             </div>
 
             {/* Arrow */}
-            <div className="flex-shrink-0 text-gray-800 group-hover:text-orange-500 group-hover:translate-x-1 transition-all duration-300">
+            <div
+              className="group-hover:translate-x-1"
+              style={{
+                flexShrink: 0,
+                color: '#111111',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
               <svg
-                width="36"
-                height="12"
                 viewBox="0 0 36 12"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                style={{ width: 'clamp(24px, 3.5vw, 40px)', height: 'auto' }}
               >
                 <path
                   d="M0 6H34M34 6L29 1M34 6L29 11"
@@ -132,5 +219,5 @@ export default function Services() {
         ))}
       </div>
     </section>
-  );
+  )
 }
